@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Skill Recommendor</title>
+
+<script src="./angular.min.js"></script>
+
+<!-- controller file-->
+<script type="text/javascript" src="./controller.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+
+<link type="text/css" href="style.css" rel="stylesheet">
+	
+</head>
+<body ng-app="jobApp" ng-controller="jobController">
+	<fieldset class="fieldset-auto-width">
+		<img class="logo" src="qlogo.png" alt="Quezx-logo"><br>
+		<div class="test"></div>
+		<p align="center"><b style="color:#004860;">Job Skill Recommendation System</b> </p>
+	</fieldset>
+
+	<fieldset class="fieldset-auto-width">
+		<form ng-submit="findSkills()">
+		<div class="f">
+			<input type="text" ng-model="jobtype"  class="form-control" placeholder="search here for job skills....." required>
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="btn btn-primary "type="submit">Search</button>
+		</div>			
+		</form>
+	</fieldset>
+
+	<p style="color:#a8c0c0;"><em> Top Recommended Skill for above Position</em></p>
+
+	<div  style="width:720px; border: 1px solid gray" class="pre-scrollable">
+		<ul class="list-unstyled" ng-repeat="skill in jobList ">
+			
+			<li style="color:#7890a8;font-size: 20px; ">&nbsp;&nbsp;&nbsp;&nbsp;{{skill | uppercase}}</li>
+		</ul>
+	</div>
+	
+
+</body>
+</html>
